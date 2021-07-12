@@ -1,45 +1,55 @@
 ﻿using System;
 
-namespace SHADOW
+namespace assignment2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string course;
-            string inpout;
-
             //while(true){
+                float a,b,c,d,e,f;
 
-                Console.WriteLine("Are you a Per-Time student or Full-Time student: ");
-                inpout = Console.ReadLine();
+                Console.WriteLine("Entr A");
+                a = Convert.ToInt32(Console.ReadLine());
 
-                if (inpout.Substring(0,4).ToLower().Contains("full"))
+                Console.WriteLine("Enter B");
+                b = Convert.ToInt32(Console.ReadLine());
+
+                
+                Console.WriteLine("Enter C");
+                c = Convert.ToInt32(Console.ReadLine());
+
+                
+                Console.WriteLine("Enter D");
+                d = Convert.ToInt32(Console.ReadLine());
+
+                
+                Console.WriteLine("Enter E");
+                e = Convert.ToInt32(Console.ReadLine());
+
+                
+                Console.WriteLine("Enter F");
+                f = Convert.ToInt32(Console.ReadLine());
+
+                float determinant = (a*b) - (b*c);
+                float changeInX = (e*d) - (b*f);
+                float changeInY = (a*f) - (e*c);
+
+                if (determinant == 0)
                 {
-                    Console.WriteLine("Enter your courde of study: ");
-                    course = Console.ReadLine();
-                    Console.WriteLine(course + "is a good course");
-                    //break;
+                    Console.WriteLine("The equation has no solution");
+                    
                 }
+                  else 
+                  {
+                      float x = changeInX/determinant;
+                      float y = changeInY/determinant;
 
-                if (inpout.Substring(0,4).ToLower().Contains("part"))
-                {
-                    Console.WriteLine("How many unit are you taking?");
-                    int partTimeCredit = Convert.ToInt32(Console.ReadLine());
-                     if (partTimeCredit > 6)
-                     {
-                         Console.WriteLine("Too much unit for a Part-Time student");
-                         //continue;
-                     }
-                     else
-                     {
-                         Console.WriteLine("proceed");
-                         //break;
-                     }
-                }
+                      Console.WriteLine("The Value of \n x is {0} \n y is {1}", x, y);
+                  }
+
             //}
-
-
-        } 
+            
+        }
     }
 }
